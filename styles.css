@@ -1,0 +1,121 @@
+*,
+*::after,
+*::before{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container{
+    background: linear-gradient(45deg, #c2d3c2, #5b7eca);
+    width: 100%;
+    min-height: 100vh;
+    padding: 10px;
+   
+}
+
+.to-do{
+    background: #fff;
+    max-width: 100%;
+    width: 540px;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 100px auto 20px;
+   
+    border-radius: 10px;
+    padding: 32px;
+    gap: 32px;
+
+}
+
+
+.to-do h2{
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 8px;
+    align-items: left;
+    text-align: left;
+    color: #002765;
+    margin-bottom: 20px;
+    
+
+}
+
+.to-do h2 img{
+    width: 30px;
+}
+
+.row{
+    display: flex;
+    border: 1px solid #cfc9c9ee;
+    border-radius: 25px;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    
+}
+ #input-box{
+    flex: 1;
+    outline: none;
+    border: none;
+    background-color: transparent;
+    padding: 8px 16px;
+    font-weight: 14px;
+  
+ 
+
+ }
+
+ .row button{
+    border: none;
+    background-color: #ff5945;
+    padding: 8px 16px;
+    border-radius: 25px;
+    width: 100px;
+    font-weight: bold;
+    color: #fff;
+    text-shadow:0px 0px 1px #616060;
+    cursor: pointer;
+ }
+
+ul li{
+    padding: 12px 8px 12px 50px;
+    font-size: 18px;
+    text-transform: capitalize;
+    list-style: none;
+    user-select: none;
+    cursor: pointer;
+    position: relative;
+ }
+
+ ul li::before{
+    content: '';
+    position: absolute;
+    background: url("/images/unchecked.png") ;
+    background-size: cover;
+    background-position: center;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    top: 12px;
+    left: 8px;
+  }
+
+  ul li.checked{
+   color: #555;
+   text-decoration: line-through;
+  }
+
+   ul li.checked::before{
+    content: '';
+    background: url(images/checked.png);
+    background-position: center;
+    background-size: cover;
+    border-radius: 50%;
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    top: 12px;
+    left: 8px; 
+   }
