@@ -19,12 +19,20 @@ function addTasks() {
     }
         tasks.push(
             {id: Date.now(),
-             text: taskText}
+             text: taskText,
+            completed: false}
         );
         
     renderTasks();
     saveData();
     input.value = '';
+}
+
+function completedTasks(index){
+
+    if(index >= 0 && index < tasks.length){
+        tasks[index].completed = true;
+    }
 }
 
 function renderTasks() {
@@ -47,16 +55,18 @@ function renderTasks() {
 
 taskContainer.addEventListener('click', (e) =>{
    
+    
     if(e.target.tagName === 'LI'){
+        const id = e.target.id;
+        const index = tasks.findIndex(task => task.id === parseInt(id, 10));
         e.target.classList.toggle('checked');
+        completedTasks(index);
+        console.log()
         saveData();
 
     }else if(e.target.tagName === 'SPAN'){
-    
         const id = e.target.parentElement.id;
-    
-        const taskToRemove = tasks.findIndex(task => task.id === parseInt(id, 10));
-
+    const taskToRemove = tasks.findIndex(task => task.id === parseInt(id, 10));
         if(taskToRemove !== -1){
             tasks.splice(taskToRemove, 1)
             e.target.parentElement.remove();
