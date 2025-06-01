@@ -61,7 +61,6 @@ taskContainer.addEventListener('click', (e) =>{
         const index = tasks.findIndex(task => task.id === parseInt(id, 10));
         e.target.classList.toggle('checked');
         completedTasks(index);
-        console.log()
         saveData();
 
     }else if(e.target.tagName === 'SPAN'){
